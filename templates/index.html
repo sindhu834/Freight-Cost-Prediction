@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Freight Cost Prediction System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="card">
+
+        <h1>🚚 Freight AI</h1>
+
+        <p class="subtitle">Smart Freight Cost Prediction using AI</p>
+
+        <form action="/predict" method="post">
+
+            <input type="number" name="distance" placeholder="📍 Distance (km)" required>
+            <input type="number" name="weight" placeholder="⚖️ Weight (kg)" required>
+            <input type="number" name="fuel" placeholder="⛽ Fuel Price" required>
+
+            <button type="submit">⚡ Predict Cost</button>
+
+        </form>
+
+        {% if prediction_text %}
+        <div class="result">
+            {{ prediction_text }}
+        </div>
+        {% endif %}
+
+        <p class="footer">✨ Developed by <b>Sindhu</b></p>
+
+    </div>
+
+</div>
+
+</body>
+</html>
